@@ -115,21 +115,18 @@ sudo apt -y install bc
 source ~/.zshrc
 ```
 
-## 5. Anaconda をインストールする
+## 5. Python の環境構築をする
 
-元マニュアル: [5.Anaconda をインストールする](./5.Anacondaをインストールする.md)
+元マニュアル: [5.Python の環境構築をする](./5.Pythonの環境構築をする.md)
 
-以下を実行する。  
-URL は最新版ではない可能性があるので、エラーになるときは[参考サイト](https://www.salesanalytics.co.jp/datascience/datascience141/#LinuxAnaconda)を見て最新版を取得する。  
-途中`Please, press ENTER to continue`と言われたら [Enter] を押し、下矢印キーでライセンス条項を一番下まで降り、`yes`と入力して [Enter] を押す。  
-次にインストール場所を聞かれるが、デフォルトのままでよいのでそのまま [Enter] を押す。  
-最後に、Anaconda3 の初期化をするか聞かれるので、`yes`と答える。
+以下を実行する。
 
 ```shell
-cd ~
-wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
-bash Anaconda3-2022.10-Linux-x86_64.sh
-conda config --set changeps1 False
+sudo apt -y upgrade python3
+sudo apt -y install python3-pip
+sudo apt -y install python3-venv
+echo "export VIRTUAL_ENV_DISABLE_PROMPT=1" >> ~/.zshrc
+echo "alias python=python3" >> ~/.zshrc
 source ~/.zshrc
 ```
 

@@ -100,16 +100,22 @@ brew install coreutils
 source ~/.zshrc
 ```
 
-## 5. Anaconda をインストールする
+## 5. Python の環境構築をする
 
-元マニュアル: [5.Anaconda をインストールする](./5.Anacondaをインストールする.md)
+元マニュアル: [5.Python の環境構築をする](./5.Pythonの環境構築をする.md)
 
-[参考サイト](https://www.python.jp/install/anaconda/macos/install.html)の「パッケージのダウンロード」と「パッケージのインストール」を参考にインストールする。  
-その後、ターミナルで下記を実行する。
+以下を実行する。
 
 ```shell
-/opt/anaconda3/bin/conda init zsh
-conda config --set changeps1 False
+brew install xz
+brew install pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+pyenv install 3.11.1
+pyenv global 3.11.1
+echo "export VIRTUAL_ENV_DISABLE_PROMPT=1" >> ~/.zshrc
 source ~/.zshrc
 ```
 

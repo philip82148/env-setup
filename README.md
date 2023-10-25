@@ -18,7 +18,7 @@
 
 - Linux ベースの開発環境
 - Oh My Zsh によるリッチなシェル
-- Anaconda による Python 環境
+- venv を使った Python 環境
 - Git エイリアスによる迅速な開発体験
 
 ## 対象 OS

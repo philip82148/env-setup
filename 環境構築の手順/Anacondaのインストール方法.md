@@ -1,6 +1,6 @@
 # Anaconda のインストール方法
 
-この環境構築の手順では Python の仮想環境の構築をするアプリとして venv をインストールしている。  
+この環境構築の手順に従うと venv というアプリで Python の仮想環境の構築ができるようになる。  
 venv は Python 標準が提供する仮想環境であり、基本これを使うことが推奨されるが、比較的新しく、古くから使われていた Anaconda という非標準のアプリを使っているプロジェクトも多い。  
 このマニュアルはそのようなプロジェクトに対応するために、Anaconda のインストール方法について説明したマニュアルである。
 
@@ -79,13 +79,15 @@ wsl
 /opt/anaconda3/bin/conda init zsh
 ```
 
-### 4. ターミナルの先頭の(base)の表示を消す
+### 4. Anaconda の設定をする
 
 #### Windows/Mac 共通
 
-下記を実行する。
+下記を実行する。  
+具体的には、Anaconda の仮想環境が自動でアクティベートされるのを停止しているのと、ターミナルの先頭の(base)の表示を消している。
 
 ```shell
-conda config --set changeps1 False
+conda config --set auto_activate_base false
+conda config --set changeps1 false
 source ~/.zshrc
 ```

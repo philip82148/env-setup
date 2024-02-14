@@ -124,8 +124,7 @@ pip install -r requirements.lock
 ```
 
 `requirements.lock`は環境の完全再現を行うことができるが、膨大なライブラリが記録されているため、直接自分でインストールしたライブラリが分からなくなり、アップグレードやダウングレードが困難になる。  
-そのため、環境構築には`requirements.lock`を使い、ライブラリのアップデート等には`requirements.txt`を使い、同時に`pip freeze`で`requirements.lock`もアップデートする、というのが個人的には理想的ではあると思う。  
-ここのライブラリの管理の仕方には[様々流派があるらしい](https://nikkie-ftnext.hatenablog.com/entry/various-file-names-of-pip-freeze)。
+そのため、環境構築には`requirements.lock`を使い、ライブラリのアップデート等には`requirements.txt`を使い、同時に`pip freeze`で`requirements.lock`もアップデートする、というのが個人的には理想的ではあると思う。
 
 ### Anaconda について
 

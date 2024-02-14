@@ -95,6 +95,12 @@ g push origin ma
 VSCode 内で開いたターミナルを何らかの理由で再起動したい場合は、文字を何も打っていない状態で[Ctrl+D]するか`exit`コマンドを実行し、[Ctrl+@]/[Ctrl+\`] とすればよい。  
 文字を打っている状態で[Ctrl+D]すると[Delete]キーと同じ意味になる。
 
+### `source`コマンドは`.`でもよい
+
+Python の仮想環境のアクティベートは`source .venv/bin/activate`というコマンドで出来るが、`. .venv/bin/activate`でもよい。
+
+※`source`や`.`は厳密にはコマンドではなく、Zsh の組み込みコマンドである。
+
 ## 3. Git の一般的な機能
 
 ここでは、Git の一般的な機能について説明しておく。  

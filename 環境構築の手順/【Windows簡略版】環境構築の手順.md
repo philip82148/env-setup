@@ -191,8 +191,6 @@ alias gsp='git sp'
 alias greset='git reset'
 alias gpull='git pull'
 alias gpush='git push'
-alias gfetch='git fetch'
-alias gmerge='git merge'
 ```
 
 5. ターミナルで下記を実行する。
@@ -211,6 +209,10 @@ source ~/.zshrc
 ```shell
 code ~
 ```
+
+#### 重要: WSL 上で setup した場合も、`WSL: Ubuntu-22.04`と表示されない場合がある。
+
+その場合、VSCode に、WSL の拡張機能がインストールされているかチェックする。入っていない場合、追加でインストールする。Code の再起動を促された場合、再起動する。
 
 2. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
 
@@ -241,6 +243,29 @@ code ~
 ```
 
 8. [Ctrl+Shift+P]->[Reload Window]を選択。
+
+#### WSL 上で Code の拡張設定を追加しなかった場合
+
+この場合、後ほど Code の拡張機能で WSL 対応機能を追加することになるが、code runner の設定を変更しなければならない。
+
+read-only なので setting json から変更できないことにも注意
+"Code Runner"の Extension settings から
+
+```shell
+Code-runner: Run in terminal
+```
+
+のチェックボックスにチェックを入れる。
+
+すると、Preferences: Open Default Settings (JSON)が
+
+```json
+{
+  "code-runner.runInTerminal": true
+}
+```
+
+となる。これで code-runner の実行がターミナル上で[Ctrl+Alt+N]で可能になる。
 
 ## 8. Git の認証情報を設定する
 

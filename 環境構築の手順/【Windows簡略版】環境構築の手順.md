@@ -212,11 +212,11 @@ source ~/.zshrc
 code ~
 ```
 
-#### 重要: WSL 上で setup した場合も、`WSL: Ubuntu-22.04`と表示されない場合がある。
+2. **VSCode の左下の緑の部分に`WSL: Ubuntu-22.04`と表示されていることを確認する**。  
+   なっていない場合の対応は元マニュアルを参照してほしい。  
+   **なお、今後 VSCode を開くときは毎回左下の緑の部分が`WSL: Ubuntu-22.04`と表示されている(VSCode が WSL とつながっている)ことを確認すること。**
 
-その場合、VSCode に、WSL の拡張機能がインストールされているかチェックする。入っていない場合、追加でインストールする。Code の再起動を促された場合、再起動する。
-
-2. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
+3. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
 
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (コードフォーマッタ)
 - [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) (Python のコードフォーマッタ)
@@ -229,45 +229,23 @@ code ~
 
 ※リンターが何かについては[Python による開発のあれこれ](../開発の手順/Pythonによる開発のあれこれ.md#1-リンターについて)に記載がある。
 
-3. VSCode 上で[Ctrl+,] -> "Format On Save"と検索してチェックを入れる。
-4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
-5. [Ctrl+Shift+P]->[Reload Window]を選択。
-6. [Ctrl+Shift+P]->[Preferences: Open User Settings (JSON)]を選択。
-7. 開いたファイルに以下のように追記して保存する。ただし、元々記入してあるものとの間に`,`を入れるのを忘れないこと。
+4. VSCode 上で[Ctrl+,] -> "Format On Save"と検索してチェックを入れる。
+5. 続けて"Default Formatter"と検索して Prettier を選ぶ。
+6. [Ctrl+Shift+P]->[Reload Window]を選択。
+7. [Ctrl+Shift+P]->[Preferences: Open User Settings (JSON)]を選択。
+8. 開いたファイルに以下のように追記して保存する。ただし、元々記入してあるものとの間に`,`を入れるのを忘れないこと。
 
 ```json
 {
     ...<元々記入してあるやつ。この後に,を入れることを忘れないこと>,
     "black-formatter.args": ["--line-length", "119"],
+    "isort.args": ["--profile", "black", "--line-length", "119"],
     "flake8.args": ["--extend-ignore", "E203", "--max-line-length", "119"],
-    "isort.args": ["--profile", "black", "--line-length", "119"]
+    "code-runner.runInTerminal": true
 }
 ```
 
-8. [Ctrl+Shift+P]->[Reload Window]を選択。
-
-#### WSL 上で Code の拡張設定を追加しなかった場合
-
-この場合、後ほど Code の拡張機能で WSL 対応機能を追加することになるが、code runner の設定を変更しなければならない。
-
-read-only なので setting json から変更できないことにも注意
-"Code Runner"の Extension settings から
-
-```shell
-Code-runner: Run in terminal
-```
-
-のチェックボックスにチェックを入れる。
-
-すると、Preferences: Open Default Settings (JSON)が
-
-```json
-{
-  "code-runner.runInTerminal": true
-}
-```
-
-となる。これで code-runner の実行がターミナル上で[Ctrl+Alt+N]で可能になる。
+9. [Ctrl+Shift+P]->[Reload Window]を選択。
 
 ## 8. Git の認証情報を設定する
 

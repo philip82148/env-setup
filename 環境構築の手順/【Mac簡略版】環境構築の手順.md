@@ -218,8 +218,9 @@ source ~/.zshrc
 {
     ...<元々記入してあるやつ。この後に,を入れることを忘れないこと>,
     "black-formatter.args": ["--line-length", "119"],
+    "isort.args": ["--profile", "black", "--line-length", "119"],
     "flake8.args": ["--extend-ignore", "E203", "--max-line-length", "119"],
-    "isort.args": ["--profile", "black", "--line-length", "119"]
+    "code-runner.runInTerminal": true
 }
 ```
 

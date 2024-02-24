@@ -213,7 +213,7 @@ code ~
 ```
 
 2. **VSCode の左下の緑の部分に`WSL: Ubuntu-22.04`と表示されていることを確認する**。  
-   なっていない場合の対応は元マニュアルを参照してほしい。  
+   なっていなければ元マニュアルを参照する。  
    **なお、今後 VSCode を開くときは毎回左下の緑の部分が`WSL: Ubuntu-22.04`と表示されている(VSCode が WSL とつながっている)ことを確認すること。**
 
 3. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。

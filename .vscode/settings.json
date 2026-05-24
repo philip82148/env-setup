@@ -18,6 +18,8 @@
     "greset",
     "gsub",
     "gsuk",
+    "gsukm",
+    "gsum",
     "gsvu",
     "isort",
     "noqa",
@@ -27,6 +29,7 @@
     "robbyrussell",
     "scipy",
     "simplerich",
+    "sukm",
     "testrepo",
     "venv"
   ]

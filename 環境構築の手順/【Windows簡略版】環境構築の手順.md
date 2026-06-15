@@ -233,18 +233,18 @@ code ~
    なっていなければ元マニュアルを参照する。  
    **なお、今後 VSCode を開くときは毎回左下の緑の部分が`WSL: Ubuntu-22.04`と表示されている(VSCode が WSL とつながっている)ことを確認すること。**
 
-3. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
+3. VSCodeの(WSL上の)ターミナルで下記を実行し、拡張機能をインストールする。
 
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (コードフォーマッタ)
-- [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) (Python のコードフォーマッタ)
-- [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort) (Python のコードフォーマッタ)
-- [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) (Python のリンター)
-- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) (英語のタイポを教えてくれる)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (Git 情報を見やすくしてくれる)
-- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (Git のログを見やすくしてくれる)
-- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (コードの(コンパイルと)実行をショートカットキーで行えるようにする)
-
-※リンターが何かについては[Python による開発のあれこれ](../開発の手順/Pythonによる開発のあれこれ.md#1-リンターについて)に記載がある。
+```shell
+code --install-extension esbenp.prettier-vscode
+code --install-extension ms-python.black-formatter
+code --install-extension ms-python.isort
+code --install-extension ms-python.flake8
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension eamodio.gitlens
+code --install-extension donjayamanne.githistory
+code --install-extension formulahendry.code-runner
+```
 
 4. VSCode 上で[Ctrl+,] -> "Format On Save"と検索してチェックを入れる。
 5. 続けて"Default Formatter"と検索して Prettier を選ぶ。

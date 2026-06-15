@@ -211,25 +211,24 @@ source ~/.zshrc
 
 元マニュアル: [7.VSCode の設定をする](./7.VSCodeの設定をする.md)
 
-1. VSCode を開く。
-2. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
+1. ターミナルで下記を実行し、拡張機能をインストールする。
 
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (コードフォーマッタ)
-- [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) (Python のコードフォーマッタ)
-- [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort) (Python のコードフォーマッタ)
-- [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8) (Python のリンター)
-- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) (英語のタイポを教えてくれる)
-- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (Git 情報を見やすくしてくれる)
-- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (Git のログを見やすくしてくれる)
-- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (コードの(コンパイルと)実行をショートカットキーで行えるようにする)
+```shell
+code --install-extension esbenp.prettier-vscode
+code --install-extension ms-python.black-formatter
+code --install-extension ms-python.isort
+code --install-extension ms-python.flake8
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension eamodio.gitlens
+code --install-extension donjayamanne.githistory
+code --install-extension formulahendry.code-runner
+```
 
-※リンターが何かについては[Python による開発のあれこれ](../開発の手順/Pythonによる開発のあれこれ.md#1-リンターについて)に記載がある。
-
-3. VSCode 上で [Command+,] -> "Format On Save"と検索してチェックを入れる。
-4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
-5. [Command+Shift+P] -> [Reload Window]を選択。
-6. [Command+Shift+P]->[Preferences: Open User Settings (JSON)]を選択。
-7. 開いたファイルに以下のように追記して保存する。ただし、元々記入してあるものとの間に`,`を入れるのを忘れないこと。ファイル保存時に自動フォーマットされる。
+2. VSCode を開き、[Command+,] -> "Format On Save"と検索してチェックを入れる。
+3. 続けて"Default Formatter"と検索して Prettier を選ぶ。
+4. [Command+Shift+P] -> [Reload Window]を選択。
+5. [Command+Shift+P]->[Preferences: Open User Settings (JSON)]を選択。
+6. 開いたファイルに以下のように追記して保存する。ただし、元々記入してあるものとの間に`,`を入れるのを忘れないこと。ファイル保存時に自動フォーマットされる。
 
 ```json
 {
@@ -241,7 +240,7 @@ source ~/.zshrc
 }
 ```
 
-8. [Command+Shift+P] -> [Reload Window]を選択。
+7. [Command+Shift+P] -> [Reload Window]を選択。
 
 ## 8. Git の認証情報を設定する
 
